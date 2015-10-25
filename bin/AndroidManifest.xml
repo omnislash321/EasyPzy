@@ -6,7 +6,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="21" />
@@ -28,6 +28,10 @@
         <activity
             android:name=".ShoppingListActivity"
             android:label="@string/title_activity_shopping_list" >
+        </activity>
+        <activity
+            android:name=".CheckoutActivity"
+            android:label="@string/title_activity_checkout" >
         </activity>
     </application>
 

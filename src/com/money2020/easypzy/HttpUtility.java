@@ -94,7 +94,61 @@ public class HttpUtility {
 		
         
 	}
-	public static String POST(String url, JSONObject obj){
+	public static String POST_PAYMENT(String url, JSONObject obj){
+		
+		Log.i("JSONPOSTBEGIN", "Beginning of JSON POST");
+		InputStream inputStream = null;
+        String result = "";
+	    
+	    //HttpClient httpclient = new DefaultHttpClient();
+
+	    try{
+	    	HttpPost post = new HttpPost(url);
+	    	post.setHeader("Content-type", "application/json");
+	    	post.setHeader("Accept", "application/json");
+	    	
+
+			Long epoch = System.currentTimeMillis();
+			
+			Long nonce = Math.abs(SecureRandom.getInstance("SHA1PRNG").nextLong());
+	    	
+	    	post.setHeader("apikey",apiKey);
+	    	post.setHeader("Authorization",getMacValue(obj.toString(), nonce, epoch));
+	    	post.setHeader("token",token);
+	    	post.setHeader("nonce", nonce.toString());
+	    	post.setHeader("timestamp", epoch.toString());
+	    	
+	    	Log.d("TEST", getMacValue(obj.toString(),nonce, epoch));
+	    	
+	    	
+	    	StringEntity se = new StringEntity(obj.toString());
+//	    	//se.setContentType("application/json;charset=UTF-8");
+//	        se.setContentEncoding(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+	        post.setEntity(se);
+	        HttpResponse httpResponse = mHhttpclient.execute(post);
+	        
+	        // receive response as inputStream
+            inputStream = httpResponse.getEntity().getContent();
+
+	     
+            // convert inputstream to string
+            if(inputStream != null){
+            	result = convertInputStreamToString(inputStream);
+            }
+                
+            else
+                result = "Did not work!";
+
+	        Log.i("JSONTEST", result);
+ 
+        } catch (Exception e) {
+            Log.d("InputStream", e.getLocalizedMessage());
+        }
+	    Log.i("JSONPOSTEND", "End of JSON data post method...");
+	    return result;
+	}
+	
+public static String POST_TOKENIZE(String url, JSONObject obj){
 		
 		Log.i("JSONPOSTBEGIN", "Beginning of JSON POST");
 		InputStream inputStream = null;

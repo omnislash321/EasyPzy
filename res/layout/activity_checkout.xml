@@ -1,16 +1,15 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/ShoppingList"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.money2020.easypzy.ShoppingListActivity" >
+    tools:context="com.money2020.easypzy.CheckoutActivity" >
 
     <TableLayout
-        android:id="@+id/shoppingLayout"
+        android:id="@+id/checkoutLayout"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
@@ -27,16 +26,16 @@
                 android:layout_height="fill_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Shopping Cart"
+                android:text="Select Credit Card"
                 android:textAlignment="center"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
-
+        
         <TableRow
             android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
 
             <TextView
                 android:id="@+id/totalAmount"
@@ -56,11 +55,10 @@
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
         </TableRow>
-
     </TableLayout>
 
     <TableLayout
-        android:id="@+id/shoppingTable"
+        android:id="@+id/checkoutTable"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
@@ -69,19 +67,18 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/openScanner"
+        android:id="@+id/addCard"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/checkoutButton"
+        android:layout_above="@+id/checkout"
         android:layout_centerInParent="true"
-        android:text="Scan Item!" />
+        android:text="Add Card" />
 
     <Button
-        android:id="@+id/checkoutButton"
+        android:id="@+id/checkout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
         android:text="Checkout!" />
-
 </RelativeLayout>
