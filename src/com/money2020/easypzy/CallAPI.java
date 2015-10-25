@@ -2,14 +2,17 @@ package com.money2020.easypzy;
 
 import org.json.JSONObject;
 
+import android.app.Activity;
 import android.os.AsyncTask;
+import android.widget.TextView;
 
-@SuppressWarnings("deprecation")
 public class CallAPI extends AsyncTask<JSONObject, Integer, String>{
 	private String path;
-
-	public CallAPI(String url){
+	private Activity activity;
+	
+	public CallAPI(String url, Activity activity){
 		path = url;
+		this.activity = activity;
 	}
 
 	@Override
@@ -17,8 +20,10 @@ public class CallAPI extends AsyncTask<JSONObject, Integer, String>{
 		return HttpUtility.POST(path, params[0] );
 	}
 	
-	protected void onPostExecute(Long result) {
-		
+	@Override
+	protected void onPostExecute(String result) {
+		TextView resultsField = (TextView)activity.findViewById(R.id.api_Results);
+		resultsField.setText(result);
     }
 
 }

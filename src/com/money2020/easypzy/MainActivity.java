@@ -90,17 +90,18 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 		}
 		
 		if(v.getId() == R.id.callAPI){
-			//https://api-cert.payeezy.com/v1/transactions
-			CallAPI call = new CallAPI("http://httpbin.org/post");
+			CallAPI call = new CallAPI("https://api-cert.payeezy.com/v1/transactions", this);
+
+//			CallAPI call = new CallAPI("http://httpbin.org/post");
 
 			JSONObject jsonObject = new JSONObject();
 			
 			try {
-				jsonObject.put("merchant_ref","ezpz");
+				jsonObject.put("merchant_ref","Astonishing-Sale");
 				jsonObject.put("transaction_type","purchase");
 				jsonObject.put("method","credit_card");
-				jsonObject.put("price", "1299");
-				jsonObject.put("currency_Code","USD");
+				jsonObject.put("amount", "1299");
+				jsonObject.put("currency_code","USD");
 
 				JSONObject creditCard = new JSONObject();
 				creditCard.put("type","visa");
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 			Log.d("testDebug", "executing");
 			call.execute(jsonObject);
 			Log.d("testDebug", "ending");
+			
 			apiResults.setText(request);
 			
 		}

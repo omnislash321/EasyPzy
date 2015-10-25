@@ -7,5 +7,6 @@
 	<classpathentry exported="true" kind="con" path="com.android.ide.eclipse.adt.DEPENDENCIES"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK/CaptureActivity"/>
 	<classpathentry kind="lib" path="C:/Users/Tao/Desktop/zxing-master/zxing-master/core-3.2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Tao/Desktop/zxing-master/zxing-master/commons-codec-1.10.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>
