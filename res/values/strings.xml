@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EasyPzy</string>
+    <string name="welcome_message">Welcome!</string>
+    <string name="store_select">Please select a store to shop!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="store_array">
+        <item>Target</item>
+        <item>Walmart</item>
+    </string-array>
+
+    <string name="title_activity_shopping_list">ShoppingList</string>
+    <string name="hello_world">Hello world!</string>
+
+</resources>
