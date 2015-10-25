@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 			String scanFormat = scanningResult.getFormatName();
 
 			ArrayList<Product> products = (ArrayList<Product>) Parsing.parseEntries(scanContent);
-			
+			Log.d("testing", "products" + products);
 //			Intent shoppingIntent = new Intent(this, ShoppingList.class);
 			
 			scannerResult.setText(scanContent + " " + scanFormat);

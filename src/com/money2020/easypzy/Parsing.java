@@ -8,12 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.os.Environment;
+import android.util.Log;
 
 public class Parsing {
 	//QBYA1F7005359
 	
 		public static List<String> getProductEntries(String barcodeId){
 		File sdcard = Environment.getExternalStorageDirectory();
+		Log.d("Testing", "sdcard: " + sdcard.getPath());
 		File file = new File(sdcard, "stores.csv");
 		
 //		String file = "C:/Users/batbo_000/Downloads/stores.csv";
