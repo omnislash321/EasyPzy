@@ -15,7 +15,7 @@ public class Parsing {
 	
 		public static List<String> getProductEntries(String barcodeId){
 		File sdcard = Environment.getExternalStorageDirectory();
-		Log.d("Testing", "sdcard: " + sdcard.getPath());
+		
 		File file = new File(sdcard, "stores.csv");
 		
 //		String file = "C:/Users/batbo_000/Downloads/stores.csv";
@@ -27,7 +27,8 @@ public class Parsing {
 			String result = "";
 			while((result = br.readLine()) != null){
 				if(result.substring(0, result.indexOf(delimiter)).equals(barcodeId)){
-					resultSet.add(result);
+					resultSet.add(result);				
+					Log.d("Testing", "size: " + result);
 				}
 			}
 		}	
